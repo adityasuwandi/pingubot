@@ -8,7 +8,10 @@ class EventMessage extends LineBotFunctions{
     if($this->botEventType($event) == "message"){
       if($this->botEventMessageType($event) == "text"){
         if (strpos($this->botEventMessageText($event), 'asu') !== false) {
-            $this->botReplyText($event,"gaboleh ngomong jorok :(");
+            $this->botReplyText($event,'gaboleh ngomong jorok :(');
+          }
+          else {
+            $this->botReplyText($event,'coba lagi hehe');
           }
         // switch ($this->botEventMessageText($event)) {
         //   // Button Template
