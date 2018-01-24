@@ -7,12 +7,12 @@ class EventMessage extends LineBotFunctions{
   public function index($event){
     if($this->botEventType($event) == "message"){
       if($this->botEventMessageType($event) == "text"){
-        // if (strpos($this->botEventMessageText($event), 'asu') !== false) {
-        //     $this->botReplyText($event,'gaboleh ngomong jorok :(');
-        //   }
-        //   else {
-        //     $this->botReplyText($event,'coba lagi hehe');
-        //   }
+        if (strpos($this->botEventMessageText($event), 'asu') !== false) {
+            $this->botReplyText($event,'gaboleh ngomong jorok :(');
+          }
+          else {
+            $this->botReplyText($event,'coba lagi hehe');
+          }
         switch ($this->botEventMessageText($event)) {
           // Button Template
           case 'buttons':
