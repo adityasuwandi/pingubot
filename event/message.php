@@ -7,7 +7,7 @@ class EventMessage extends LineBotFunctions{
   public function index($event){
     if($this->botEventType($event) == "message"){
       if($this->botEventMessageType($event) == "text"){
-        if (strpos($this->botEventMessageText($event), 'asu') !== false) {
+        if (strpos($this->botEventMessageText($event), 'asu'||'anjing'||'celeng'||'bajingan'||'tai'||'kontol'||'bangsat'||'babi') !== false) {
             $this->botReplyText($event,'gaboleh ngomong jorok :(');
           }
           else {
