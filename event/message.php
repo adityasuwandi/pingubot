@@ -7,12 +7,6 @@ class EventMessage extends LineBotFunctions{
   public function index($event){
     if($this->botEventType($event) == "message"){
       if($this->botEventMessageType($event) == "text"){
-        if (strpos($this->botEventMessageText($event), 'asu'||'anjing'||'celeng'||'bajingan'||'tai'||'kontol'||'bangsat'||'babi') !== false) {
-            $this->botReplyText($event,'gaboleh ngomong jorok :(');
-          }
-          else {
-            $this->botReplyText($event,'coba lagi hehe');
-          }
         switch ($this->botEventMessageText($event)) {
           // Button Template
           case 'buttons':
@@ -65,13 +59,25 @@ class EventMessage extends LineBotFunctions{
             $this->botReplyMessage($event,$template);
             break;
           default:
-            // Reply Text
-            $this->botReplyText($event,$this->botEventMessageText($event));
+            $array  = array('asu', 'fuck', 'shit', 'milk');
+            if (strposa($this->botEventMessageText($event), $array) !== false) {
+                $this->botReplyText($event,'gaboleh ngomong jorok :(');
+              }
+              else {
+                $this->botReplyText($event,'coba lagi hehe');
+              }
             break;
         }
       }
     }
   }
+  public function strposa($haystack, $needle, $offset=0) {
+    if(!is_array($needle)) $needle = array($needle);
+    foreach($needle as $query) {
+        if(strpos($haystack, $query, $offset) !== false) return true; // stop on first true result
+    }
+    return false;
+}
 
 }
 
