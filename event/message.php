@@ -60,7 +60,7 @@ class EventMessage extends LineBotFunctions{
             break;
           default:
             $array  = array('asu', 'fuck', 'shit', 'milk');
-            if (strposa($this->botEventMessageText($event), $array) !== false) {
+            if (strposa($this->botEventMessageText($event), $array,0) !== false) {
                 $this->botReplyText($event,'gaboleh ngomong jorok :(');
               }
               else {
@@ -74,7 +74,7 @@ class EventMessage extends LineBotFunctions{
   public function strposa($haystack, $needle, $offset=0) {
     if(!is_array($needle)) $needle = array($needle);
     foreach($needle as $query) {
-        if(strpos($haystack, $query, $offset) !== false) return true; // stop on first true result
+        if(strpos($haystack, $query, $offset) !== false) return true;
     }
     return false;
 }
