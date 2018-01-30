@@ -70,16 +70,15 @@ class EventMessage extends LineBotFunctions{
                 if(strpos($this->botEventMessageText($event), $p) !== false){
                     switch ($p) {
                       case 'ika':
-                        $this->botReplyText($event, "hai ikaa cantik :3");
-                        $this->botSendSticker($event,1,3);
+                        $this->botReplyText($event, "hai ikaa cantik :3". $this->botSendSticker($event,1,3));
                         break;
                       case 'zsazsa':
-                        $this->botReplyText($event, "hai tante zsazsa~");
-                        $this->botSendSticker($event,2,34);
+                        $this->botReplyText($event, "hai tante zsazsa~". $this->botSendSticker($event,2,34));
+
                         break;
                       case 'kosim':
-                        $this->botReplyText($event, "main sama om?");
-                        $this->botSendSticker($event,1,109);
+                        $this->botReplyText($event, "main sama om?". $this->botSendSticker($event,1,109));
+
                         break;
                       case 'adot':
                         $this->botReplyText($event, "doooot");
