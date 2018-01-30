@@ -69,7 +69,7 @@ class EventMessage extends LineBotFunctions{
         }
       }
       else if ($this->botEventMessageType($event) == "image"){
-        $this->botReplyText($event, "anjir jelek amat mukanya wkwkwk");
+        $this->botReplyText($event, "anjir jelek amat mukanya wkwkwk" || "gambar apaan tuh, bokep ya?" || "jelek deh");
       }
     }
   }
