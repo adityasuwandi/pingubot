@@ -59,10 +59,35 @@ class EventMessage extends LineBotFunctions{
             $this->botReplyMessage($event,$template);
             break;
           default:
-            $array  = array('asu', 'fuck', 'shit', 'asu', 'bajingan','ngentot', 'babi', 'tai', 'anjing', 'kontol' );
-            foreach($array as $r) {
+            $saru  = array('asu', 'fuck', 'shit', 'asu', 'bajingan','ngentot', 'babi', 'tai', 'anjing', 'kontol' );
+            $nama  = array('ika', 'veronika xaveria', 'adot', 'kosim', 'zsazsa', 'pengu');
+            foreach($saru as $r) {
                 if(strpos($this->botEventMessageText($event), $r) !== false){
                     $this->botReplyText($event, "jijik ih sukanya ngomong jorok ):");
+                }
+            }
+            foreach($array as $p) {
+                if(strpos($this->botEventMessageText($event), $p) !== false){
+                    switch ($p) {
+                      case 'ika':
+                        $this->botReplyText($event, "hai ikaa cantik :3");
+                        $this->botSendSticker($event,1,3);
+                        break;
+                      case 'zsazsa':
+                        $this->botReplyText($event, "hai tante zsazsa~");
+                        $this->botSendSticker($event,2,34);
+                        break;
+                      case 'kosim':
+                        $this->botReplyText($event, "main sama om?");
+                        $this->botSendSticker($event,1,109);
+                        break;
+                      case 'adot':
+                        $this->botReplyText($event, "doooot");
+                        break;
+                      default:
+                        # code...
+                        break;
+                    }
                 }
             }
             break;
@@ -86,7 +111,7 @@ class EventMessage extends LineBotFunctions{
             break;
 
           case '4':
-            $this->botReplyText($event, "kok mirip babi");
+            $this->botReplyText($event, "wkwkwkwkwkwkwk");
             break;
 
           default:
