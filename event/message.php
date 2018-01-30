@@ -64,10 +64,12 @@ class EventMessage extends LineBotFunctions{
                 if(strpos($this->botEventMessageText($event), $r) !== false){
                     $this->botReplyText($event, "jijik ih sukanya ngomong jorok ):");
                 }
-                ;
             }
             break;
         }
+      }
+      else if ($this->botEventMessageType($event) == "image"){
+        $this->botReplyText($event, "anjir jelek amat mukanya wkwkwk");
       }
     }
   }
