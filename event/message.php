@@ -93,8 +93,8 @@ class EventMessage extends LineBotFunctions{
                 }
             }
             if(strpos($this->botEventMessageText($event), 'apakah') !== false){
-              $control = rand(1,4);
-              switch ($control) {
+              $rad = rand(1,4);
+              switch ($rad) {
                 case '1':
                   $this->botReplyText($event, "Ya");
                   break;
@@ -106,13 +106,12 @@ class EventMessage extends LineBotFunctions{
                 case '3':
                   $this->botReplyText($event, "Sudah pasti ya kalau itu");
                   break;
-
                 case '4':
                   $this->botReplyText($event, "Pikir sendiri, tanya terus kayak dora");
                   break;
-                  default:
-                    $this->botReplyText($event, "wkwkwkwkwk");
-                    break;
+                default:
+                  $this->botReplyText($event, "wkwkwkwkwk");
+                  break;
             }
           }
             break;
