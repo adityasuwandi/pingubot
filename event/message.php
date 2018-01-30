@@ -59,10 +59,10 @@ class EventMessage extends LineBotFunctions{
             $this->botReplyMessage($event,$template);
             break;
           default:
-            $array  = array('asu', 'fuck', 'shit', 'milk');
+            $array  = array('asu', 'fuck', 'shit', 'asu', 'bajingan','ngentot', 'babi', 'tai', 'anjing', 'kontol' );
             foreach($array as $r) {
                 if(strpos($this->botEventMessageText($event), $r) !== false){
-                    $this->botReplyText($event, "Thank you " . $displayName . " for adding me :)");
+                    $this->botReplyText($event, "jijik ih sukanya ngomong jorok ):");
                 }
                 ;
             }
