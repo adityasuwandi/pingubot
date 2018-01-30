@@ -71,16 +71,16 @@ class EventMessage extends LineBotFunctions{
                     switch ($p) {
                       case 'ika':
                         $this->botReplyText($event, "hai ikaa cantik :3");
-                        $this->botReplyText($event, $this->botSendSticker($event,1,4););
+                        $this->botReplyText($event, $this->botSendSticker($event,1,4));
 
                         break;
                       case 'zsazsa':
                         $this->botReplyText($event, "hai tante zsazsa~");
-                        $this->botReplyText($event, $this->botSendSticker($event,2,34););
+                        $this->botReplyText($event, $this->botSendSticker($event,2,34));
                         break;
                       case 'kosim':
                         $this->botReplyText($event, "main sama om?");
-                        $this->botReplyText($event,  $this->botSendSticker($event,1,109););
+                        $this->botReplyText($event,  $this->botSendSticker($event,1,109));
 
                         break;
                       case 'adot':
@@ -92,7 +92,28 @@ class EventMessage extends LineBotFunctions{
                     }
                 }
             }
-            
+            if(strpos($this->botEventMessageText($event), 'apakah') !== false){
+              $rad = rand(1,4);
+              switch ($rad) {
+                case '1':
+                  $this->botReplyText($event, "Ya");
+                  break;
+
+                case '2':
+                  $this->botReplyText($event, "Tidak");
+                  break;
+
+                case '3':
+                  $this->botReplyText($event, "Sudah pasti ya kalau itu");
+                  break;
+                case '4':
+                  $this->botReplyText($event, "Pikir sendiri, tanya terus kayak dora");
+                  break;
+                default:
+                  $this->botReplyText($event, "wkwkwkwkwk");
+                  break;
+            }
+          }
             break;
         }
       }
