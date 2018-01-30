@@ -69,7 +69,7 @@ class EventMessage extends LineBotFunctions{
         }
       }
       else if ($this->botEventMessageType($event) == "image"){
-        int $control = rand (1,4);
+        $control = rand(1,4);
         switch ($control) {
           case '1':
             $this->botReplyText($event, "anjir jelek amat mukanya wkwkwk");
