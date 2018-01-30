@@ -69,7 +69,30 @@ class EventMessage extends LineBotFunctions{
         }
       }
       else if ($this->botEventMessageType($event) == "image"){
-        $this->botReplyText($event, "anjir jelek amat mukanya wkwkwk" || "gambar apaan tuh, bokep ya?" || "jelek deh");
+        int $control = rand ( int 1 , int 4 );
+        switch ($control) {
+          case '1':
+            $this->botReplyText($event, "anjir jelek amat mukanya wkwkwk");
+            break;
+
+          case '2':
+            $this->botReplyText($event, "gambar apaan tuh!? bokep ya?");
+            break;
+
+          case '3':
+            $profile = $this->botGetProfile($event);
+            $displayName = $profile['displayName'];
+            $this->botReplyText($event, $displayName . " left the group.");
+            break;
+
+          case '4':
+            $this->botReplyText($event, "kok mirip babi");
+            break;
+
+          default:
+            $this->botReplyText($event, "wkwkwkwkwk");
+            break;
+        }
       }
     }
   }
