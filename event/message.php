@@ -60,25 +60,17 @@ class EventMessage extends LineBotFunctions{
             break;
           default:
             $array  = array('asu', 'fuck', 'shit', 'milk');
-            if (strposa($this->botEventMessageText($event), $array,0) !== false) {
-                $this->botReplyText($event,'gaboleh ngomong jorok :(');
-              }
-              else {
-                $this->botReplyText($event,'coba lagi hehe');
-              }
+            foreach($array as $r) {
+                if(strpos($this->botEventMessageText($event), $r) !== false){
+                    $this->botReplyText($event, "Thank you " . $displayName . " for adding me :)");
+                }
+                ;
+            }
             break;
         }
       }
     }
   }
-  public function strposa($haystack, $needle, $offset=0) {
-    if(!is_array($needle)) $needle = array($needle);
-    foreach($needle as $query) {
-        if(strpos($haystack, $query, $offset) !== false) return true;
-    }
-    return false;
-}
-
 }
 
 ?>
