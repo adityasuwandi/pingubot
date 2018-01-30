@@ -66,7 +66,7 @@ class EventMessage extends LineBotFunctions{
                     $this->botReplyText($event, "jijik ih sukanya ngomong jorok ):");
                 }
             }
-            foreach($array as $p) {
+            foreach($nama as $p) {
                 if(strpos($this->botEventMessageText($event), $p) !== false){
                     switch ($p) {
                       case 'ika':
