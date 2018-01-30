@@ -84,12 +84,12 @@ class EventMessage extends LineBotFunctions{
             $saru  = array('asu', 'fuck', 'shit', 'asu', 'bajingan','ngentot', 'babi', 'tai', 'anjing', 'kontol' );
             $nama  = array('ika', 'veronika xaveria', 'adot', 'kosim', 'zsazsa', 'pengu');
             foreach($saru as $r) {
-                if(strpos($this->botEventMessageText($event), $r) !== false){
+                if(stripos($this->botEventMessageText($event), $r) !== false){
                     $this->botReplyText($event, "jijik ih sukanya ngomong jorok ):");
                 }
             }
             foreach($nama as $p) {
-                if(strpos($this->botEventMessageText($event), $p) !== false){
+                if(stripos($this->botEventMessageText($event), $p) !== false){
                     switch ($p) {
                       case 'ika':
                         $this->botReplyText($event, "hai ikaa cantik :3");
