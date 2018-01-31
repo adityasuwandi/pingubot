@@ -2,12 +2,13 @@
 
 /* Line BOT Examples */
 
-class EventMessage extends LineBotFunctions{
-
-  public function index($event){
-    if($this->botEventType($event) == "message"){
-      if($this->botEventMessageType($event) == "text"){
-        switch ($this->botEventMessageText($event)) {
+class EventMessage extends LineBotFunctions
+{
+    public function index($event)
+    {
+        if ($this->botEventType($event) == "message") {
+            if ($this->botEventMessageType($event) == "text") {
+                switch ($this->botEventMessageText($event)) {
           // Button Template
           case 'buttons':
             // Action Button Array
@@ -16,9 +17,9 @@ class EventMessage extends LineBotFunctions{
               ["label" => "button 2","text" => "button 2"],
               ["label" => "button 3","text" => "button 3"]
             ];
-            $button = $this->botButtonTemplateBuilder("Example","LineBot Button Template","https://i.imgur.com/bYFMygZ.jpg",$action);
+            $button = $this->botButtonTemplateBuilder("Example", "LineBot Button Template", "https://i.imgur.com/bYFMygZ.jpg", $action);
             $template = $this->botTemplateMessageBuilder("Message Builder Sample", $button);
-            $this->botReplyMessage($event,$template);
+            $this->botReplyMessage($event, $template);
             break;
           //Confirm Template
           case 'confirm':
@@ -27,9 +28,9 @@ class EventMessage extends LineBotFunctions{
               ["label" => "button 1","text" => "button 1"],
               ["label" => "button 2","text" => "button 2"]
             ];
-            $confirm = $this->botConfirmTemplateBuilder("Example?",$action);
+            $confirm = $this->botConfirmTemplateBuilder("Example?", $action);
             $template = $this->botTemplateMessageBuilder("Message Builder Sample", $confirm);
-            $this->botReplyMessage($event,$template);
+            $this->botReplyMessage($event, $template);
             break;
           // Carousel Template
           case 'carousel':
@@ -56,12 +57,12 @@ class EventMessage extends LineBotFunctions{
             ];
             $carousel = $this->botCarouselTemplateBuilder($array);
             $template = $this->botTemplateMessageBuilder("Message Builder Sample", $carousel);
-            $this->botReplyMessage($event,$template);
+            $this->botReplyMessage($event, $template);
             break;
           default:
-            if(stripos($this->botEventMessageText($event), 'apakah') !== false){
-              $rad = rand(1,4);
-              switch ($rad) {
+            if (stripos($this->botEventMessageText($event), 'apakah') !== false) {
+                $rad = rand(1, 4);
+                switch ($rad) {
                 case '1':
                   $this->botReplyText($event, "Ya");
                   break;
@@ -79,47 +80,47 @@ class EventMessage extends LineBotFunctions{
                   $this->botReplyText($event, "wkwkwkwkwk");
                   break;
                 }
-            }
-            else {
-            $saru  = array('asu', 'fuck', 'shit', 'asu', 'bajingan','ngentot', 'babi', 'tai', 'anjing', 'kontol' );
-            $nama  = array('ika', 'veronika xaveria', 'adot', 'kosim', 'zsazsa', 'pengu');
-            foreach($saru as $r) {
-                if(stripos($this->botEventMessageText($event), $r) !== false){
-                    $this->botReplyText($event, "jijik ih sukanya ngomong jorok ):");
+            } else {
+                $saru  = array('asu', 'fuck', 'shit', 'asu', 'bajingan','ngentot', 'babi', 'tai', 'anjing', 'kontol' );
+                $nama  = array('ika', 'veronika xaveria', 'adot', 'kosim', 'zsazsa', 'pengu');
+                foreach ($saru as $r) {
+                    if (stripos($this->botEventMessageText($event), $r) !== false) {
+                        $this->botReplyText($event, "jijik ih sukanya ngomong jorok ):");
+                    }
                 }
-            }
-            foreach($nama as $p) {
-                if(stripos($this->botEventMessageText($event), $p) !== false){
-                    switch ($p) {
-                      case 'ika':
-                        $this->botReplyText($event, "hai ikaa cantik :3");
-                        $this->botReplyText($event, $this->botSendSticker($event,1,4));
+                foreach ($nama as $p) {
+                    if (stripos($this->botEventMessageText($event), $p) !== false) {
+                        switch ($p) {
+                        case 'ika':
+                          $this->botReplyText($event, "hai ikaa cantik :3");
+                          $this->botReplyText($event, $this->botSendSticker($event, 1, 4));
 
-                        break;
-                      case 'zsazsa':
-                        $this->botReplyText($event, "hai tante zsazsa~");
-                        $this->botReplyText($event, $this->botSendSticker($event,2,34));
-                        break;
-                      case 'kosim':
-                        $this->botReplyText($event, "main sama om?");
-                        $this->botReplyText($event,  $this->botSendSticker($event,1,109));
+                          break;
+                        case 'zsazsa':
+                          $this->botReplyText($event, "hai tante zsazsa~");
+                          $this->botReplyText($event, $this->botSendSticker($event, 2, 34));
+                          break;
+                        case 'kosim':
+                          $this->botReplyText($event, "main sama om?");
+                          $this->botReplyText($event, $this->botSendSticker($event, 1, 109));
 
-                        break;
-                      case 'adot':
-                        $this->botReplyText($event, "doooot");
-                        break;
-                      default:
-                        # code...
-                        break;
+                          break;
+                        case 'adot':
+                          $this->botReplyText($event, "doooot");
+                          break;
+                        default:
+                          # code...
+                          break;
+                      }
                     }
                 }
             }
+
             break;
         }
-      }
-      else if ($this->botEventMessageType($event) == "image"){
-        $control = rand(1,4);
-        switch ($control) {
+            } elseif ($this->botEventMessageType($event) == "image") {
+                $control = rand(1, 4);
+                switch ($control) {
           case '1':
             $this->botReplyText($event, "anjir jelek amat mukanya wkwkwk");
             break;
@@ -141,11 +142,8 @@ class EventMessage extends LineBotFunctions{
           default:
             $this->botReplyText($event, "wkwkwkwkwk");
             break;
-          }
         }
-      }
+            }
+        }
     }
-  }
 }
-
-?>
