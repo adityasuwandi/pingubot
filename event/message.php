@@ -59,7 +59,7 @@ class EventMessage extends LineBotFunctions{
             $this->botReplyMessage($event,$template);
             break;
           default:
-            if(strpos($this->botEventMessageText($event), 'apakah') !== false){
+            if(stripos($this->botEventMessageText($event), 'apakah') !== false){
               $rad = rand(1,4);
               switch ($rad) {
                 case '1':
@@ -69,7 +69,6 @@ class EventMessage extends LineBotFunctions{
                 case '2':
                   $this->botReplyText($event, "Tidak");
                   break;
-
                 case '3':
                   $this->botReplyText($event, "Sudah pasti ya kalau itu");
                   break;
@@ -81,6 +80,7 @@ class EventMessage extends LineBotFunctions{
                   break;
                 }
             }
+            else {
             $saru  = array('asu', 'fuck', 'shit', 'asu', 'bajingan','ngentot', 'babi', 'tai', 'anjing', 'kontol' );
             $nama  = array('ika', 'veronika xaveria', 'adot', 'kosim', 'zsazsa', 'pengu');
             foreach($saru as $r) {
@@ -141,6 +141,7 @@ class EventMessage extends LineBotFunctions{
           default:
             $this->botReplyText($event, "wkwkwkwkwk");
             break;
+          }
         }
       }
     }
