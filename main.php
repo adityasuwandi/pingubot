@@ -5,6 +5,7 @@ require 'event/follow.php';
 require 'event/unfollow.php';
 require 'event/join.php';
 require 'event/leave.php';
+require 'vendor/autoload.php';
 
 class Bot extends LineBotFunctions{
 

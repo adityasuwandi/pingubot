@@ -85,7 +85,24 @@ class EventMessage extends LineBotFunctions
                 $nama  = array('ika', 'veronika xaveria', 'adot', 'kosim', 'zsazsa', 'elwi');
                 foreach ($saru as $r) {
                     if (stripos($this->botEventMessageText($event), $r) !== false) {
+                      $jorok = rand(1, 4);
+                      switch ($jorok) {
+                      case '1':
                         $this->botReplyText($event, "jijik ih sukanya ngomong jorok ):");
+                        break;
+                      case '2':
+                        $this->botReplyText($event, "astaghfirullah tobatlah nak");
+                        break;
+                      case '3':
+                        $this->botReplyText($event, "siapa yang ngajarin bilang gitu");
+                        break;
+                      case '4':
+                        $this->botReplyText($event, "sabar sabar gan");
+                        break;
+                      default:
+                        $this->botReplyText($event, "wkwkwkwkwk");
+                        break;
+                      }
                     }
                 }
                 foreach ($nama as $p) {
